@@ -1,0 +1,8 @@
+"""| Component        | Purpose     |
+| ---------------- | -------------- |
+| Streamlit        | user interface |
+| Python           | logic          |
+| OpenAI API       | AI brain       |
+| pandas           | data handling  |
+| charts/dashboard | analytics      |
+"""
