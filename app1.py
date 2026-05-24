@@ -478,6 +478,8 @@ try:
         try:
             os.remove("tickets.csv")
             st.success("Database cleared!")
+            import time
+            time.sleep(2)
             st.rerun()
         except:
             st.error("No database found.")
