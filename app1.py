@@ -473,6 +473,14 @@ try:
     st.divider()
 
     csv_data = saved_df.to_csv(index=False)
+    if st.button("Clear Database", type="secondary"):
+        import os
+        try:
+            os.remove("tickets.csv")
+            st.success("Database cleared!")
+            st.rerun()
+        except:
+            st.error("No database found.")
     st.download_button(
         label="Download Tickets as CSV",
         data=csv_data,
