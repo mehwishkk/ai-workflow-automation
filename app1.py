@@ -464,7 +464,7 @@ try:
                 {row.get('Category','')}
             </div>
             <div style="font-size:13px; color:#555; margin-top:4px;">
-                {row.get('Ticket Summary','')}
+                {str(row.get('Ticket Summary','')).replace('<','&lt;').replace('>','&gt;')}
             </div>
         </div>
         """, unsafe_allow_html=True)
