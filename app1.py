@@ -445,6 +445,7 @@ try:
     }
 
     for _, row in saved_df.iterrows():
+        summary = str(row.get('Ticket Summary','')).replace('<','').replace('>','').replace('/div','').replace('div','').strip()
         p = row.get("Priority", "Medium")
         badge_emoji, bg_color, border_color = priority_badge_colors.get(
             p, ("⚪", "#f9f9f9", "#cccccc")
@@ -464,7 +465,7 @@ try:
                 {row.get('Category','')}
             </div>
             <div style="font-size:13px; color:#555; margin-top:4px;">
-                {str(row.get('Ticket Summary','')).replace('<','&lt;').replace('>','&gt;')}
+                {summary}
             </div>
         </div>
         """, unsafe_allow_html=True)
