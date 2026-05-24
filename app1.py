@@ -473,15 +473,11 @@ try:
     st.divider()
 
     csv_data = saved_df.to_csv(index=False)
-    col_clear, col_download = st.columns([1, 3])
-with col_clear:
-    if st.button("Clear Database", type="secondary", use_container_width=True):
+    if st.button("Clear Database", type="secondary"):
         import os
         try:
             os.remove("tickets.csv")
-            st.success("Database cleared! Refreshing...")
-            import time
-            time.sleep(1)
+            st.success("Database cleared!")
             st.rerun()
         except:
             st.error("No database found.")
